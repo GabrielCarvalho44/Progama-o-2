@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">class </span><span class="s1">Produto </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String nome</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">preco</span><span class="s2">;</span>
+    <span class="s0">private int </span><span class="s1">quantidade</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Produto</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">double </span><span class="s1">preco</span><span class="s2">, </span><span class="s0">int </span><span class="s1">quantidade</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nome </span><span class="s2">= </span><span class="s1">nome</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">preco </span><span class="s2">= </span><span class="s1">preco</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">quantidade </span><span class="s2">= </span><span class="s1">quantidade</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">valorTotalEmEstoque</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">preco </span><span class="s2">* </span><span class="s1">quantidade</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">adicionarEstoque</span><span class="s2">(</span><span class="s0">int </span><span class="s1">quantidade</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">quantidade </span><span class="s2">+= </span><span class="s1">quantidade</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">removerEstoque</span><span class="s2">(</span><span class="s0">int </span><span class="s1">quantidade</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">quantidade </span><span class="s2">-= </span><span class="s1">quantidade</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String toString</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">nome </span><span class="s2">+ </span><span class="s3">&quot;, R$ &quot; </span><span class="s2">+ </span><span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s3">&quot;%.2f&quot;</span><span class="s2">, </span><span class="s1">preco</span><span class="s2">) + </span><span class="s3">&quot;, &quot; </span><span class="s2">+ </span><span class="s1">quantidade </span><span class="s2">+ </span><span class="s3">&quot; unidades, Total: R$ &quot; </span><span class="s2">+ </span><span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s3">&quot;%.2f&quot;</span><span class="s2">, </span><span class="s1">valorTotalEmEstoque</span><span class="s2">());</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">Scanner sc </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s4">// Entrada de dados do produto</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Entre os dados do produto:&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Nome: &quot;</span><span class="s2">);</span>
+        <span class="s1">String nome </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Preço: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">preco </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Quantidade: &quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">quantidade </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+
+        <span class="s1">Produto produto </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Produto</span><span class="s2">(</span><span class="s1">nome</span><span class="s2">, </span><span class="s1">preco</span><span class="s2">, </span><span class="s1">quantidade</span><span class="s2">);</span>
+
+        <span class="s4">// Mostrar dados do produto</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Dados do produto: &quot; </span><span class="s2">+ </span><span class="s1">produto</span><span class="s2">);</span>
+
+        <span class="s4">// Entrada no estoque</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Digite o número de produtos a ser adicionado ao estoque: &quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">quantidadeAdicionada </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">produto</span><span class="s2">.</span><span class="s1">adicionarEstoque</span><span class="s2">(</span><span class="s1">quantidadeAdicionada</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Dados atualizados: &quot; </span><span class="s2">+ </span><span class="s1">produto</span><span class="s2">);</span>
+
+        <span class="s4">// Saída no estoque</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Digite o número de produtos a ser removido do estoque: &quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">quantidadeRemovida </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">produto</span><span class="s2">.</span><span class="s1">removerEstoque</span><span class="s2">(</span><span class="s1">quantidadeRemovida</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Dados atualizados: &quot; </span><span class="s2">+ </span><span class="s1">produto</span><span class="s2">);</span>
+
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
